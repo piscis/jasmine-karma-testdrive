@@ -7,7 +7,8 @@ describe "we can access google", ->
 
     browser.url("http://www.google.de").getTitle((err, title) ->
       assert title.indexOf("Google") isnt -1
-      done()
       return
     )
+    .pause(1000)
+    .call(done)
     return
